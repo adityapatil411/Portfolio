@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    color: white;
+}
+.context{
+    height: 930px;
+    width: 80%;
+    background: linear-gradient(0deg, black, rgb(78, 78, 78));
+    position: relative;
+    margin: 8vh auto;
+}
+.glow::before , .glow::after{
+    content: '';
+    position: absolute;
+    left:-2px;
+    top: -2px;
+    background: linear-gradient(45deg, yellow,orange,rgb(73, 198, 73),rgb(45, 45, 255),
+    pink,rgb(251, 85, 112),#ff0090,#366ea5,#a3b429,#0098fe,#79f2e6);
+    background-size: 400%;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    z-index: -1;
+    animation: animate 20s linear infinite;
+}
+@keyframes animate{
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 400% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
+}
+.glow::after{
+    filter: blur(1.5vh);
+}
+.name{
+    display: grid;
+    grid-template-columns: 10% 50% 10% 20% 10%;
+    align-items: center;
+    padding-top: 20px;
+}
+.mine{
+    grid-column: 2/3;
+}
+.icon{
+    justify-self: end;
+    padding-right: 5px;
+}
+.contact{
+    grid-column: 4/5;
+    justify-self: end;
+}
+a{
+    text-decoration: none;
+    color: white;
+    padding: 2px;
+    margin-top: 2px;
+    border-radius: 5px;
+}
+a:hover{
+    background-color: white;
+    color: black;
+    transition: 500ms;
+}
+.main{
+    display: grid;
+    grid-template-columns: 5% 60% 30% 5%;
+}
+.left{
+    grid-column: 2/3;
+    margin-top: 25px;
+}
+.carrier{
+    margin-top: 15px;
+    line-height: 25px;
+    padding-top: 5px;
+    text-align: justify;
+}
+h3{
+    font-size: 20px;
+    text-decoration: underline;
+}
+#edu h3,.exp{
+    margin-top: 25px;
+}
+.skill,.award,.lang{
+    margin-top: 35px;
+}
+table{
+    width: 600px;
+    height: 400px;
+    margin-top: 15px;
+}
+table,tr,th{
+    border: 2px solid white;
+    border-collapse: collapse;
+}
+.right{
+    padding-left: 45px;
+}
+.list{
+    line-height: 25px;
+    text-align: justify;
+    margin-top: 15px;
+}
+.skillist,.awardlist,.langlist{
+    line-height: 25px;
+    margin-top: 15px;
+}
